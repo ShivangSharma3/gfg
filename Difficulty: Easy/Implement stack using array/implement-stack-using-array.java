@@ -1,18 +1,12 @@
 class MyStack {
     int top=-1;
-    int oper[];
-    
-    MyStack(){
-        oper=new int[1000];
-    }
+    int st[]=new int[100000];
+
     
     public void push(int x) {
         // code here
-        if(top==oper.length-1){
-            return;
-        }
-        top=top+1;
-        oper[top]=x;
+       top++;
+       st[top]=x;
     }
 
     public int pop() {
@@ -21,8 +15,8 @@ class MyStack {
         if(top==-1){
             return -1;
         }
-        int val=oper[top];
-        top=top-1;
-        return val;
+        int el=st[top];
+        top--;
+        return el;
     }
 }
