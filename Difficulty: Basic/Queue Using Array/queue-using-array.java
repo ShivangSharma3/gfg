@@ -11,21 +11,22 @@ class MyQueue {
     // Function to push an element x in a queue.
     void push(int x) {
         // Your code here
-        arr[rear]=x;
-        rear++;
+        arr[front]=x;
+        front++;
     }
 
     // Function to pop an element from queue and return that element.
     int pop() {
+        
         // Your code here
-        if(front==rear){
+        if(rear==front){
             return -1;
         }
         if(arr.length==0){
             return -1;
         }
-        int val=arr[front];
-        front++;
-        return val;
+        int el=arr[rear];
+        rear++;
+        return el;
     }
 }
